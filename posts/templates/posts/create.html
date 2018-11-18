@@ -1,0 +1,39 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  {% extends 'base.html' %}
+  {% block content %}
+  <h1>New Post</h1>
+  <br>
+  {% if error %}
+  {{ error }}
+  <br />
+  <br />
+  {% endif %}
+
+  <form method="POST" action="{% url 'posts:create' %}">
+    {% csrf_token %}
+
+    Title:<br>
+    <input type="text" name="title" /><p>
+      <br>
+    URL:<br>
+    <input type="text" name="url" /><p>
+    <input class="btn btn-primary" type="submit" value="Post">
+  </form>
+  {% endblock %}
+  <script src="js/scripts.js"></script>
+</body>
+</html>

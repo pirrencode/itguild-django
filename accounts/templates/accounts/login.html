@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  {% extends 'base.html' %}
+  {% block content %}
+  <h1>Log in</h1>
+  {% if error %}
+  {{ error }}
+  <br />
+  {% endif %}
+  <br />
+  <form method="POST" action="{% url 'accounts:login' %}">
+    {% csrf_token %}
+
+    {% if request.GET.next %}
+    <input type="hidden" name="next" value={{ request.GET.next }} />
+    {% endif %}
+
+    Username:<br>
+    <input type="text" name="username" /><p>
+      <br>
+    Password:<br>
+    <input type="password" name="password" /><p>
+      <br>
+    <input class="btn btn-primary" type="submit" value="Log in">
+  </form>
+  {% endblock %}
+  <script src="js/scripts.js"></script>
+</body>
+</html>

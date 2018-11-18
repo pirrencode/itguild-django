@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+
+</head>
+
+<body>
+  {% extends 'base.html' %}
+  {% block content %}
+  <h1>Sign up!</h1>
+  {% if error %}
+  {{ error }}
+  <br />
+  {% endif %}
+  <br />
+  <form method="POST" action="{% url 'accounts:signup' %}">
+    <br />
+    {% csrf_token %}
+    Username:<br>
+    <input type="text" name="username" /><p>
+      <br>
+    Password:<br>
+    <input type="password" name="password1" /><br><p>
+      <br>
+    Confirm password:<br>
+    <input type="password" name="password2" /><br><p>
+      <br>
+    Submit:<br>
+    <input class="btn btn-primary" type="submit" value="Sign up!">
+  </form>
+  {% endblock %}
+  <script src="js/scripts.js"></script>
+</body>
+</html>

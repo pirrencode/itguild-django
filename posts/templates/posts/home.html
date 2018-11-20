@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
 
-  <title>The homepage of nowhere on Django</title>
+  <title>Nowhere of IT Guild</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
 
@@ -21,6 +21,7 @@
 <img src="{% static 'background.jpg' %}" width=1000></img>
 <br><br>
   <a class="btn btn-info" href="{% url 'posts:create' %}">New Post</a>
+  <a class="btn btn-success" href="{% url 'events:eventcreate' %}">New Event</a>
   <br><br>
 
   {% for post in posts.all %}

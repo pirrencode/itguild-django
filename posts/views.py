@@ -8,9 +8,11 @@ from django.contrib.auth.models import User
 @login_required
 def create(request):
     if request.method == 'POST':
-        if request.POST['title'] and request.POST['url']:
+        if request.POST['title'] and request.POST['url'] and request.POST['body']:
             post = Post()
             post.title = request.POST['title']
+            post.body = request.POST['body']
+            post.image = request.FILES['image']
             if request.POST['url'].startswith('http://') or request.POST['url'].startswith('https://'):
                 post.url = request.POST['url']
             else:

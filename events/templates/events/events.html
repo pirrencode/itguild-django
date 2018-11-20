@@ -1,24 +1,26 @@
-<!doctype html>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
 
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+{% for event in events.all %}
 
-  <title>The HTML5 Herald</title>
-  <meta name="description" content="The HTML5 Herald">
-  <meta name="author" content="SitePoint">
+<div class="row pt-3">
+  <div class="col-2">
+    <img src = "{{ event.icon.url }}" class="img=fluid" width=180 /><br>
+    Author {{ event.author.username }}
+    <br>
+    {{ event.pub_date_pretty }}
+  </div>
+  <div class="col-7">
+    <h2><a href="">{{ event.title }}</a><h2><p>
+    {{ event.summary }}
+  </div>
+</div>
+<p>
+<hr>
+<p>
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
 
-</head>
+{% endfor %}
 
-<body>
-  {% extends 'base.html' %}
-  {% block content %}
-
-Events
-
-  {% endblock %}
-  <script src="js/scripts.js"></script>
-</body>
-</html>
+{% endblock %}

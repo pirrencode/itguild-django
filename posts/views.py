@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect, get_list_or_404, get_object_or_40
 from django.contrib.auth.decorators import login_required
 from django.utils import timezone
 from .models import Post
-from events.models import Event
+#from events.models import Event
 from django.contrib.auth.models import User
 
 # Create your views here.
@@ -29,8 +29,7 @@ def create(request):
 
 def home(request):
     post = Post.objects.order_by('-votes_total')
-    event = Event.objects
-    return render(request, 'posts/home.html', {'posts':post}, {'events':event})
+    return render(request, 'posts/home.html', {'posts':post})
 
 def gallery(request):
     return render(request, 'posts/gallery.html')

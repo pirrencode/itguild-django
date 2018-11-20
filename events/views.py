@@ -6,7 +6,8 @@ from .models import Event
 from django.utils import timezone
 
 def events(request):
-    return render(request, 'events/events.html')
+    event = Event.objects
+    return render(request, 'events/events.html', {'events':event})
 
 @login_required(login_url="/accounts/signup")
 def eventcreate(request):
@@ -33,3 +34,7 @@ def eventcreate(request):
     else:
         return render(request, 'events/eventcreate.html', {'error':'All fields are required.'})
     return render(request, 'events/eventcreate.html')
+
+def detail(request, product_id):
+    event = get_object_or_404(Event, pk=product_id)
+    return render(request, 'events/detail.html', {'event':events})

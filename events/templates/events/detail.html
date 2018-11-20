@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+
+<div class="row">
+  <div class="col-2">
+    <img src = "{{ event.icon.url }}" class="img=fluid" />
+  </div>
+  <div class="col-10">
+    <a href="{{ event.url}}"><h1>{{ event.title }}</h1></a>
+  </div>
+</div>
+
+<div class="row pt-2">
+  <div class="col-8">
+    <img src = "{{ event.image.url }}" class="img=fluid" width=600 />
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    <h4>Hunted by {{ event.author.username }}</h4>
+  </div>
+  <div class="col-4 text-right">
+    <h4>{{ event.pub_date_pretty }}</h4>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-8">
+    <p>{{ event.body }}</p>
+  </div>
+</div>
+
+{% endblock %}

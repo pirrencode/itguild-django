@@ -23,27 +23,6 @@
   <a class="btn btn-info" href="{% url 'posts:create' %}">New Post</a>
   <a class="btn btn-success" href="{% url 'events:eventcreate' %}">New Event</a>
   <br><br>
-<hr>
-
-{% for event in events.all %}
-
-<div class="row pt-3">
-  <div class="col-2" onclick="window.location='{% url 'detail' event.id %}';" style="cursor: pointer;">
-    <img src = "{{ event.icon.url }}" class="img=fluid" width=180 /><br>
-    Hunted by {{ event.author.username }}
-    <br>
-    {{ event.pub_date_pretty }}
-  </div>
-  <div class="col-7">
-    <h2><a href="{% url 'detail' event.id %}">{{ event.title }}</a><h2><p>
-    {{ event.summary }}
-  </div>
-</div>
-<p>
-<hr>
-<p>
-
-{% endfor %}
 
 <hr>
   {% for post in posts.all %}

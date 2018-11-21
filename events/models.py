@@ -19,6 +19,12 @@ class Event(models.Model):
     def pub_date_pretty(self):
         return self.pub_date.strftime('%d.%m.%Y')
 
+    def start_date_pretty(self):
+        return self.startdate.strftime('%H:%M / %a %d %b, %Y')
+
+    def end_date_pretty(self):
+        return self.enddate.strftime('%H:%M / %a %d %b, %Y')
+
     def __str__(self):
         return self.title
 

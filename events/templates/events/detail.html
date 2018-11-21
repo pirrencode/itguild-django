@@ -2,12 +2,43 @@
 {% load staticfiles %}
 {% block content %}
 
+<h3>IT Guild Event Details</h3>
+<hr>
+
 <div class="row">
   <div class="col-2">
-    <img src = "{{ event.icon.url }}" class="img=fluid" />
+    <img src = "{{ event.icon.url }}" class="img=fluid" width="200" />
   </div>
-  <div class="col-10">
+  <div class="col-8">
     <a href="{{ event.url}}"><h1>{{ event.title }}</h1></a>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    Start date: <i> {{ event.start_date_pretty }}</i>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-4">
+    End date: <i> {{ event.end_date_pretty }}</i>
+  </div>
+</div>
+
+<p>
+
+  <div class="row">
+    <div class="col-4">
+      Where: <b>{{ event.place }}</b>
+    </div>
+  </div>
+
+<p>
+
+<div class="row">
+  <div class="col-4">
+    Organizer: {{ event.author.username }}
   </div>
 </div>
 
@@ -16,20 +47,15 @@
     <img src = "{{ event.image.url }}" class="img=fluid" width=600 />
   </div>
 </div>
-
-<div class="row">
-  <div class="col-4">
-    <h4>Author: {{ event.author.username }}</h4>
-  </div>
-  <div class="col-4 text-right">
-    <h4>{{ event.pub_date_pretty }}</h4>
-  </div>
-</div>
-
-<div class="row">
+<p>
+<div class="row pt-4">
   <div class="col-8">
+    <b>Full description:</b>
     <p>{{ event.body }}</p>
   </div>
 </div>
+
+<p>
+<i>Added by {{ event.author.username }} at {{ event.pub_date_pretty }}</i>
 
 {% endblock %}

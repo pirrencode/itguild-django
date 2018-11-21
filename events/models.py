@@ -9,6 +9,10 @@ class Event(models.Model):
     image = models.ImageField(upload_to='images/')
     body = models.TextField()
     pub_date = models.DateTimeField()
+    startdate = models.DateTimeField()
+    #starttime = models.DateTimeField()
+    enddate = models.DateTimeField()
+    #endtime = models.DateTimeField()
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,)
 
     def pub_date_pretty(self):

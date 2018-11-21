@@ -13,7 +13,7 @@ def events(request):
     event = Event.objects
     return render(request, 'events/events.html', {'events':event})
 
-@login_required(login_url="/accounts/signup")
+@login_required(login_url="/accounts/login")
 def eventcreate(request):
     #check if it is post request
     if request.method == 'POST':

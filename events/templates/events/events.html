@@ -1,29 +1,38 @@
+
+
 {% extends 'base.html' %}
 {% load staticfiles %}
 {% block content %}
 
 <h3> Upcoming IT Guild Events</h3>
-<p><hr>
+<p><br>
+
 {% for event in events.all %}
 
-<div class="row pt-3">
-  <div class="col-2">
-    <img src = "{{ event.icon.url }}" class="img=fluid" width=200 /><br>
-    Author: {{ event.author.username }}
-    <br>
-    {{ event.pub_date_pretty }}
-  </div>
-  <div class="col-7">
-    <h2><a href="{% url 'events:detail' event.id %}">{{ event.title }}</a></h2><p>
-    Where: <b>{{ event.place }}</b> <p>
-    <b>Brief description:</b><br>
-    {{ event.summary }}
-    <p>
-    Start date: {{ event.start_date_pretty }}<br>
-    End date: {{ event.end_date_pretty }}<br>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-2">
+      <img src = "{{ event.icon.url }}" class="img=fluid" width=200 /><br>
+      Organizer: {{ event.author.username }}
+      <br>
+      {{ event.pub_date_pretty }}
+    </div>
+
+    <div class="col-8">
+
+      <h3><a href="{% url 'events:detail' event.id %}">{{ event.title }}</a></h3><p>
+      Where: <b>{{ event.place }}</b> <p>
+      <b>Brief description:</b><br>
+      {{ event.summary }}
+      <p>
+      Start date: {{ event.start_date_pretty }}<br>
+      End date: {{ event.end_date_pretty }}<br>
+
+    </div>
   </div>
 </div>
-<p>
+
 <hr>
 <p>
 

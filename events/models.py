@@ -7,6 +7,7 @@ class Event(models.Model):
     url = models.TextField()
     icon = models.ImageField(upload_to='images/')
     image = models.ImageField(upload_to='images/')
+    place = models.CharField(max_length=200)
     body = models.TextField()
     pub_date = models.DateTimeField()
     startdate = models.DateTimeField()

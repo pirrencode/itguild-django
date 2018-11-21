@@ -18,11 +18,12 @@ def eventcreate(request):
     #check if it is post request
     if request.method == 'POST':
         #passing needed Product model attributes
-        if request.POST['title'] and request.POST['body'] and request.POST['url'] and request.FILES['icon'] and request.FILES['image'] and request.POST['startdate'] and request.POST['enddate']:
+        if request.POST['title'] and request.POST['body'] and request.POST['url'] and request.FILES['icon'] and request.FILES['image'] and request.POST['startdate'] and request.POST['enddate'] and request.POST['place']:
             #creating product in DB
             event = Event()
             event.title = request.POST['title']
             event.body = request.POST['body']
+            event.place = request.POST['place']
             event.startdate = request.POST['startdate']
             #event.starttime = request.POST['starttime']
             event.enddate = request.POST['enddate']

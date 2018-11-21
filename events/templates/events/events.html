@@ -2,6 +2,8 @@
 {% load staticfiles %}
 {% block content %}
 
+<h3> Upcoming IT Guild Events</h3>
+<p><hr>
 {% for event in events.all %}
 
 <div class="row pt-3">
@@ -12,8 +14,13 @@
     {{ event.pub_date_pretty }}
   </div>
   <div class="col-7">
-    <h2><a href="{% url 'events:detail' event.id %}">{{ event.title }}</a><h2><p>
+    <h2><a href="{% url 'events:detail' event.id %}">{{ event.title }}</a></h2><p>
+    Where: <b>{{ event.place }}</b> <p>
+    <b>Brief description:</b><br>
     {{ event.summary }}
+    <p>
+    Start date:<br>
+    End date:<br>
   </div>
 </div>
 <p>

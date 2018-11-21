@@ -26,11 +26,11 @@
   <form method="POST" action="{% url 'events:eventcreate' %}" enctype="multipart/form-data">
     {% csrf_token %}
 
-    Title:<br>
+    Event Name:<br>
     <input type="text" name="title" /><p>
-      <br>
-    URL of event organizers:<br>
-    <input type="text" name="url" /><p>
+    Where:<br>
+    <input type="text" name="place" />
+    <br>
     <hr>
     Event start date:
     <input type="datetime-local" name="startdate" value="2018-11-27T19:30">
@@ -40,13 +40,16 @@
     <hr>
     <p>
     Body:<br>
-      <textarea cols="40" rows="10" name="body"></textarea><p>
+    <textarea cols="40" rows="10" name="body"></textarea><p>
     <br>Icon for your event:<br>
-      <input type="file" name="icon"/><p>
-      <br>
+    <input type="file" name="icon"/><p>
+    <br>
     Image:<br>
-     <input type="file" name="image" accept="image/*"><p>
-    <input class="btn btn-primary" type="submit" value="Post">
+   <input type="file" name="image" accept="image/*"><p>
+   URL of organization:<br>
+   <input type="text" name="url" /><p>
+     <hr>
+    <input class="btn btn-primary" type="submit" value="Save Event">
   </form>
   {% endblock %}
   <script src="js/scripts.js"></script>

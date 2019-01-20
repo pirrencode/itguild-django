@@ -1,61 +1,87 @@
-<!doctype html>
-<html lang="en">
+{% extends 'base.html' %}
+{% load staticfiles %}
 <head>
   <meta charset="utf-8">
 
   <title>Nowhere of IT Guild</title>
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
-
   <link rel="stylesheet" href="css/styles.css?v=1.0">
 
 </head>
 
 <body>
-  {% extends 'base.html' %}
-  {% load staticfiles %}
 
-  {% block content %}
 
-  <h1>The Home Of The IT Guild</h1>
-<img src="{% static 'background.jpg' %}" width=1000></img>
+{% block content %}
+
+<section class="jumbotron text-center">
+  <div class="container">
+    <h1 class="jumbotron-heading">IT GUILD</h1>
+    <p class="itg-title2 lead text-muted">Best practice community for information, media and communication technologies.</p>
+  </div>
+</section>
+
+<div class="mainframe container">
 <br><br>
-  <a class="btn btn-info" href="{% url 'posts:create' %}">New Post</a>
-  <a class="btn btn-success" href="{% url 'events:eventcreate' %}">New Event</a>
-  <br><br>
+      <center><h1 class="manifesto-title">MANIFESTO</h1></center>
+<br><br>
+    <center><h3 class="manifesto-title2">IT Guild supports development of Latvian Economics</h3></center>
+    <br><br>
+    <text class="manifesto-text">
+    <p align="justify">IT Guild’s main goal is to facilitate progress in Latvia’s competitive positions in Information Technologies and related industries. Not less than that we care to increase welfare of our members, participating companies and society at large. We believe smart implementation of latest technologies will help Latvian economy to reach necessary level of productivity, which we want to see equal to that Nordic countries. We believe in culture of trust in the IT industry between workers, companies and the State. IT Guild works in partnership to create and scale solutions to systemic problems in IT sector by inspiring, connecting and enabling citizens, entrepreneurs and organisations – to work together in collaborative environments and to jointly create resilient IT worker ecosystems. We provide cozy common language and create sustainable community.
+    <p align="justify">
+    IT Guild is network focused and a community for change to bring IT industry in Latvia to new heights.
+    <p align="justify">
+    Trust is the currency of the 21st century and must be respected.
+    <p>
+      <hr>
+    In order to raise level of worker’s wealth in the IT industry the following must be done:
+    <p align="justify">
+    <b>
+    1. Develop new working quality standards and social protection standards<br>
+    2. IT Companies should produce social value as long as commercial, creating healthy communities for IT workers.<br>
+    3. Intellectual property of IT, media and communication specialists must be  protected at new levels.<br>
+    4. Develop sustainable approach in the worker’s surrounding.<br>
+    5. Support startup culture for young IT specialists, who want to start their way in the industy. Support homegrown IT specialists who want to enter the industry.<br>
+    6. New approach for IT professions and comprehension of work. The IT specialist is the innovator, the dreamer and the entrepreneur.<br>
+    7. Life-time education, learning soceities and non-formal education for IT workers.<br>
+    8. The contracts between IT specialists and companies must be transparent and easy understandable without double-meanings. Transparency of companies decisions about changing position and firing workers.<br>
+    9. Institutional innovation. Established institutions and corporations face an urgent need to innovate in a world that is faster and more interconnected than ever before <br>
+    10. Support and protection of the most defenseless IT workers, who can’t defend themselves, who just came to our country. <br>
+    <hr></p>
+  </b>
+  <p align="justify">We see Information Technologies and related industries as perspective point of growth for Latvia. Sustainable growth in those areas are necessary requirement to keep improving countries standard of living. Educational system must continuously evolve to be able to produce highly skilled Information Technology professionals. At the same time, it is important to create a modern framework to successfully attract professionals from around the world to keep Latvia’s IT industry competitive.
+  We think, that for Latvia to grow at a faster pace, it is necessary to become an international hub for Information Technologies innovation. This implies accommodating increasing number of specialists from abroad. It is important for this process to be well organized, just and simple. In this way Latvia as a county will be able to fully benefit from transformations taking place in the world.
+  <p align="justify"><br>
+  We are interested in greater youth involvement in IT related activities. Latvian youth in our view is good in Arts and Technologies. On the edge of those disciplines we believe most future innovation will flourish.  Our youth events are planned to be diverse and beneficiary for anyone interested in enriching their knowledge in the most effective technologies up-to-date.
+  <p>
+  <b>IT Guild is open for collaboration with anyone interested in achieving three steps we consider crucial for being successful in Information Technologies as a nation. Those are:</b>
+  <p align="justify">
+  1. to level wages in IT and related sectors to Nordic countries, <br>
+  2. Eliminate culture of social dumping. <br>
+  3. vest the right to sign collective bargaining agreements only upon the registered trade unions. <br>
+  <p align="justify"><b>First.</b> Wages in IT, media, communication and related sectors shall continue to grow. While salaries in Information Technologies have grown above average, comparing the overall wage level in Latvia with Nordic countries. Information Technologies should facilitate positive productivity growth across wider economy and as a result we encourage in 15 years Latvia to achieve 70% wage level that of Nordic countries. Issue of wage levels should be settled in conjunction with a range of other important issues.
+  <p align="justify"><b>Second.</b> IT Guild strongly opposes social dumping. Industry experts indicate that highly qualified workforce leaves the country and they are replaced with low skilled workers with lower wages.
+  We’re also concerned with situations when instead of increasing salaries and keeping up with modern technologies, government institutions choose to hire less qualified personnel and use out dated technologies. This is a big loose long run. Latvia should not become a cheap place for second class professionals.
+  <p align="justify">
+  As a labor union we strongly believe that employee must receive just remuneration for his labor. This is state’s and labor unions responsibility to ensure that. Minimum wage shell constantly increase as low wages are not beneficial for economy at large. Especially it’s true for Latvia, where minimal wage is among the lowest in the EU.
+  <p align="justify"><b>Third.</b> We think it is important to strengthen labor union movement in Latvia. Along those lines, we propose that Latvian legislation provide the following: collective agreements can only be concluded by registered trade unions and not by employees themselves. This, in our view, guarantees grater employee protection and overall remuneration across the industry.
+  <p align="justify">In addition to those thee points, we stress that important role in innovation plays research and development. As such, we consider that R&D in areas including mechanics, engineering, biotechnology, nanotechnology and robotics must be stimulated far more prominently then they are now.
+  <p align="justify">Another necessity to achieve proclaimed goals is to promote technical disciplines in education, learning societies and non-formal education.
+  We support better financing of Latvia’s school system, making it capable of attracting needed technical specialists for comprehensive IT education.
+  Concluding this manifesto, we would like to stress: to be successful as a country we have to embrace transformations that are taking place in the world and lead them. Technological transformations are among the most prominent and Latvia is well positioned to leverage those changes. We support wise, open and farsighted policy to build-up prosperous future.
+  <p align="justify"><br>
+  Our labor union is committed to Latvia’s long-term positive development. We are open to collaborate with entities sharing common vision and goals. Intelligent, well-educated and protected labor is sustainable basement for countries prosperity and growth.
+</p>
+<p align="right"><br>
+/ IT Guild Founders /
+</p>
 
-<hr>
-  {% for post in posts.all %}
 
-<table>
-  <tr>
-    <td style="padding-right: 20px;"><a href="#" onClick="document.getElementById('upvote{{ post.id }}').submit()"><span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></a></span>
-<br/>{{ post.votes_total }}<br/><a href="#" onClick="document.getElementById('downvote{{ post.id }}').submit()"><span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></a></td>
-    <td><a href="{{ post.url }}">{{ post.title }}</a><br/>{{ post.pub_date_pretty }} by
-      <a href="{% url 'posts:userposts' post.author.id %}">{{ post.author.username }}</a></td>
-  </tr>
-</table>
-<hr>
+</div>
 
-<p>
-<img class="img-fluid" src ="{{ post.image.url }}" alt="Post image" width=650></img>
-<p>
-{{ post.summary }}
-<p>
-<a href="{{ post.url }}">Read the source article</a>
-<br>
-<form id="upvote{{ post.id }}" method="POST" action="{% url 'posts:upvote' post.id %}">
-  {% csrf_token %}
-  <input type="hidden">
-</form>
-
-<form id="downvote{{ post.id }}" method="POST" action="{% url 'posts:downvote' post.id %}">
-  {% csrf_token %}
-  <input type="hidden">
-</form>
-  {% endfor %}
-
-  {% endblock %}
+{% endblock %}
 
   <script src="js/scripts.js"></script>
 </body>

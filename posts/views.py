@@ -38,6 +38,7 @@ def about(request):
     return render(request, 'posts/about.html')
 
 def rss(request):
+
     return render(request, 'posts/rss.html')
 
 def manifesto(request):

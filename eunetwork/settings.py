@@ -26,6 +26,7 @@ SECRET_KEY = '7)qtgu#topx^e_z2^%rt50jxnawh4xm_(o=!gs^l5o9x7v^jyq'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['45.32.205.239', 'www.itguild.lv', 'itguild.lv', 'www.it-guild.lv', 'it-guild.lv', 'pirren.sx', 'www.pirren.sx']
 
 
 # Application definition

@@ -16,7 +16,21 @@
   {% extends 'base.html' %}
   {% block content %}
 
-RSS
+Popular IT RSS feeds<p>
+<hr>
+<h2>INFORMATION WEEK</h2>
+<hr>
+
+{% for entry in feed.entries %}
+    <a href="{{entry.link}}" target="_blank">{{entry.title}}</a>
+    <p>
+    {{ entry.published }}
+    <p>
+    {{ entry.summary }}
+    <p>
+      <img src="{{ entry.media_content.0.url }}"></img>
+    <hr>
+{% endfor %}
 
   {% endblock %}
   <script src="js/scripts.js"></script>

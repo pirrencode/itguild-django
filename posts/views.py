@@ -5,6 +5,9 @@ from .models import Post
 #from events.models import Event
 from django.contrib.auth.models import User
 
+#importing feedparser
+import feedparser
+
 # Create your views here.
 @login_required
 def create(request):
@@ -37,10 +40,6 @@ def gallery(request):
 def about(request):
     return render(request, 'posts/about.html')
 
-def rss(request):
-
-    return render(request, 'posts/rss.html')
-
 def manifesto(request):
     return render(request, 'posts/manifesto.html')
 
@@ -64,3 +63,11 @@ def userposts(request, fk):
     posts = Post.objects.filter(author__id=fk).order_by('-votes_total')
     author = get_object_or_404(User, pk=fk)
     return render(request, 'posts/userposts.html', {'posts':posts, 'author':author})
+
+#FEEDPARSER
+
+def rss(request):
+    feed = feedparser.parse("https://www.informationweek.com/rss_simple.asp")
+    #entry = NewsFeed.entries[0]
+    return render(request, 'posts/rss.html', {'feed': feed})
+    #{    'title': entry.title,    'published': entry.published,    'summary': entry.summary,    'link': entry.link,    'image':entry.media_content[0]['url']    }

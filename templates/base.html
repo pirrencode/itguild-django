@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="mynav">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="{% url 'posts:manifesto' %}">Manifest</a></li>
-          <li><a href="{% url 'posts:rss' %}">RSS Feed</a></li>
+          <li><a href="{% url 'posts:rss' %}">IT World News</a></li>
           {% if user.is_authenticated %}
           <li><a href="#" onClick="document.getElementById('logout').submit()">Log out</a></li>
           <form id="logout" method="POST" action="{% url 'accounts:logout' %}">

@@ -6,8 +6,9 @@ app_name = 'posts'
 
 urlpatterns = [
     path('gallery/', views.rss, name="gallery"),
-    path('about/', views.rss, name="about"),
+    path('about/', views.about, name="about"),
     path('rss/', views.rss, name="rss"),
+    path('team/', views.team, name="team"),
     path('manifesto/', views.manifesto, name="manifesto"),
     path('create/', views.create, name="create"),
     path('<int:pk>/upvote/', views.upvote, name="upvote"),

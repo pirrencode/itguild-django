@@ -32,6 +32,7 @@
         <ul class="nav navbar-nav navbar-right">
           <li><a href="{% url 'posts:manifesto' %}">Manifest</a></li>
           <li><a href="{% url 'posts:rss' %}">IT World News</a></li>
+          <li><a href="{% url 'posts:team' %}">Team</a></li>
           {% if user.is_authenticated %}
           <li><a href="#" onClick="document.getElementById('logout').submit()">Log out</a></li>
           <form id="logout" method="POST" action="{% url 'accounts:logout' %}">
@@ -55,7 +56,7 @@
     </div>
     <br><br>
     <hr>
-    <center>(c) Social network of IT Guild. No rights reserved.</center><p>
+    <center>(c) ARODBIEDRĪBA IT GUILD 2019. Reg.Nr. 40008284811.</center><p>
       <center>Developed on django/python tech.</center>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

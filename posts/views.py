@@ -71,3 +71,6 @@ def rss(request):
     #entry = NewsFeed.entries[0]
     return render(request, 'posts/rss.html', {'feed': feed})
     #{    'title': entry.title,    'published': entry.published,    'summary': entry.summary,    'link': entry.link,    'image':entry.media_content[0]['url']    }
+
+def team(request):
+    return render(request, 'posts/team.html')

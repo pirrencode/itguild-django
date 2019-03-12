@@ -34,6 +34,7 @@
           <li><a href="{% url 'posts:rss' %}">IT World News</a></li>
           <li><a href="{% url 'posts:team' %}">Team</a></li>
           {% if user.is_authenticated %}
+          <li><a href="{% url 'accounts:profile' %}">Profile</a></li>
           <li><a href="#" onClick="document.getElementById('logout').submit()">Log out</a></li>
           <form id="logout" method="POST" action="{% url 'accounts:logout' %}">
               {% csrf_token %}
